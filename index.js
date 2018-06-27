@@ -20,6 +20,7 @@ function next(head, list) {
   return list[nextAddress];
 };
 
+//return head node of the linked list
 function nodeAt(index, head, list) {
   let node = list[head];
   for(let i = 0; i < index; i++){
@@ -29,15 +30,27 @@ function nodeAt(index, head, list) {
   return node;
 };
 
-//MESS TO FIX
+//return the address of the node at the address
 function addressAt(index, head, list) {
   let address = head;
   let node = list[head];
-  nodeAt(index, head, list)l
+
   for(let i = 0; i < index; i++){
-     node = next(node, list);
+      address = node.next;
+      node = next(node, list);
   };
 
   return address;
 
+}
+
+//return the index of the provided node
+function indexAt(node, list, head) {
+  let index = 0;
+  let currentNode = list[head];
+  while (node != currentNode) {
+    currentNode = next(currentNode, list);
+    index++;
+  }
+  return index;
 }
