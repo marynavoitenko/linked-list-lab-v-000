@@ -29,6 +29,13 @@ function nodeAt(index, head, list) {
   return node;
 };
 
-function indexAt(node, list, head) {
+
+function addressAt(index, head, list) {
+  let address = head;
+  for(let i = 0; i < index; i++){
+     address = next(node, list).next;
+  };
+
+  return address;
 
 }
