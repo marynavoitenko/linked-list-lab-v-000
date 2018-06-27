@@ -29,11 +29,13 @@ function nodeAt(index, head, list) {
   return node;
 };
 
-
+//MESS TO FIX
 function addressAt(index, head, list) {
   let address = head;
+  let node = list[head];
+  nodeAt(index, head, list)l
   for(let i = 0; i < index; i++){
-     address = next(node, list).next;
+     node = next(node, list);
   };
 
   return address;
